@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>win环境C++编辑器</title>
+		<style>
+			header {
+      			background-color: #aaaaaa;
+      			padding: 50px;
+				z-index:500;
+    		}
+			body {
+				background:#000;
+				margin: 0;
+			}
+			.H {
+        		position: absolute;
+				top:10px;
+				left:15px;
+				font-size:25px;
+				font-weight:600;
+				color:#000000;
+			}
+			.runbtn {
+        		position: absolute;
+				top:60px;
+				left:15px;
+			}
+    		.button {
+      			border: none;
+      			padding: 0;
+      			background: none;
+      			cursor: pointer;
+    		}
+    		.btn {
+      			padding: 5px 10px;
+      			background-color: #4285f4;
+      			color: white;
+      			font-size: 16px;
+      			border-radius: 6px;
+      			transition: all 0.3s ease;
+    		}
+    		.btn:hover {
+      			background-color: #3367d6;
+      			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    		}
+    		.btn:active {
+      			background-color: #2855b9;
+      			box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+      			transform: scale(0.98);
+    		}
+    		.btn-primary:disabled {
+      			background-color: #cccccc;
+      			cursor: not-allowed;
+      			box-shadow: none;
+      			transform: none;
+    		}
+			#editor { 
+        		position: absolute;
+        		top: 100px;
+       			right: 0;
+        		bottom: 0;
+        		left: 0;
+				z-index:0;
+    		}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="H">Windows环境 C++编辑器</div>
+			<button class="runbtn button btn">运行</button>
+		</header>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.43.3/ace.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.43.3/ext-language_tools.js"></script>
+		<div id="editor"></div>
+		<script>
+			var editor = ace.edit("editor");
+    		editor.setTheme("ace/theme/monokai");
+    		editor.session.setMode("ace/mode/c_cpp");
+			// 配置自动补全
+			ace.require("ace/ext/language_tools");
+
+			editor.setOptions({
+				enableBasicAutocompletion: true,      // 按Ctrl+Space触发补全
+				enableSnippets: true,                 // 启用代码片段
+				enableLiveAutocompletion: true,       // 实时显示补全建议
+				autoScrollEditorIntoView: true,       // 自动滚动到可见区域
+				tabSize: 4,                           // 制表符大小
+				fontSize: 16                          // 字体大小
+			});
+			editor.setValue("#include <iostream>\nusing namespace std;\n\nint main() {\n    cout << \"Hello, World!\" << endl;\n    return 0;\n}", true);
+		</script>
+	</body>
+</html>
