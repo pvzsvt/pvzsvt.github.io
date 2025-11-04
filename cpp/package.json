@@ -1,0 +1,13 @@
+{
+  "name": "cppedt",       // 项目名称（自定义）
+  "version": "1.0.0",           // 版本号
+  "scripts": {                  // 核心：构建命令（与Netlify对应）
+  "build": "npm run generate"
+  },
+  "dependencies": {             // 生产环境依赖（如vue、react等）
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {          // 开发环境依赖（构建工具等）
+    "vite": "^4.4.5"
+  }
+}
