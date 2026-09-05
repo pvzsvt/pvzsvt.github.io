@@ -3,15 +3,55 @@
   <head>
     <meta charset="UTF-8">
     <title>wzy</title>
+    <style>
+      blockquote {
+        margin: 1.5rem 0 1.5rem 0.5rem;
+        padding: 0.5rem 0.5rem;
+        border-left: 0.25rem solid #808080;
+        color: #707070;
+      }
+      version {
+        margin: 1.5rem 0;
+      }
+      version::before,hr { /*hr*/
+        content: "";
+        display: block;
+        background: transparent;
+        border: 0;
+        border-bottom: 1px solid gray;
+        box-sizing: content-box;
+        margin: 24px 0;
+        overflow: hidden;
+        padding: 0;
+      }
+    </style>
   </head>
   <body>
+    <h3>C++ 控制台小游戏 - 扫雷</h3>
+    目前仅支持 Windows，可二创
+    <hr>
     <p>
-      C++控制台小游戏: 扫雷<br>
-      目前仅支持Windows，可二创<br>
-      <a href="/projects/wzysolay/wzysolay_gbk.cpp" download="wzysolay.cpp">CPP (GBK编码，适合老Dev-Cpp)</a><br>
-      <a href="/projects/wzysolay/wzysolay_utf8.cpp" download="wzysolay.cpp">CPP (UTF-8编码，适合现代编辑器)</a><br>
-      <a href="/projects/wzysolay/wzysolay_gbk.exe" download="wzysolay.exe">EXE (GBK编码，Windows终端默认编码)</a><br>
-      <a href="/projects/wzysolay/wzysolay_utf8.exe" download="wzysolay.exe">EXE (UTF-8编码)</a><br>
+      玩法：控制台交互，地图是一格占一个字符的，通过按键移动“当前选择格”并执行操作，支持可滚动的超大地图（最大100*200）。详见游戏内帮助。
     </p>
+    <blockquote>
+      下载时若被系统或浏览器拦截称有风险（因为它来自互联网且没有数字签名）：
+      <ul>
+        <li>浏览器: 进入下载页面并点击保留。</li>
+        <li>系统: 右键进入属性，勾选下方“解除锁定”，应用并确定。</li>
+      </ul>
+      （如果你不信任的话你自己编译）
+    </blockquote>
+    <version>
+      <h4>1.0</h4>
+      依赖 Windows 经典控制台，检测到现代 WT 会自动重启切换，（因为现代 WT 的特性导致它有一些难以解决的 bug）<br>
+      <b>若出现<u>循环切换窗口、难以关闭</u>的问题，长按 delete 停止切换！</b>
+      <ul>
+        <li><a href="/wzysolay/1.0/wzysolay_gbk.cpp" download="wzysolay.cpp">CPP GBK编码</a> (适合老编辑器如 Dev-Cpp)</li>
+        <li><a href="/wzysolay/1.0/wzysolay_utf8.cpp" download="wzysolay.cpp">CPP UTF-8编码</a> (适合现代编辑器如 VS Code)</li>
+        <li><a href="/wzysolay/1.0/wzysolay_gbk.exe" download="wzysolay.exe">EXE GBK编码</a> (Windows中文终端默认编码)</li>
+        <li><a href="/wzysolay/1.0/wzysolay_utf8.exe" download="wzysolay.exe">EXE UTF-8编码</a></li>
+      </ul>
+    </version>
   </body>
 </html>
+ 
